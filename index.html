@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather Forecast App</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="app-container">
+    <header class="app-header">
+    <h1><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+    <p class="app-description">Get real-time weather updates for any location</p>
+    </header>
+
+    <main class="weather-app">
+    <section class="search-section">
+        <div class="search-container">
+        <input type="text" 
+                id="city-input" 
+                placeholder="Enter city name..." 
+                aria-label="City name input"
+                autocomplete="off">
+        <button id="search-btn" aria-label="Search weather">
+            <i class="fas fa-search"></i> Search
+        </button>
+        <button id="location-btn" aria-label="Use current location">
+            <i class="fas fa-location-arrow"></i>
+        </button>
+        </div>
+        <div class="unit-toggle">
+        <button id="unit-toggle-btn" class="active" data-unit="metric">°C</button>
+        <button id="unit-toggle-btn" data-unit="imperial">°F</button>
+        </div>
+    </section>
+
+    <section class="weather-display">
+        <div id="loading" class="loading-container">
+        <div class="spinner"></div>
+        <p>Loading weather data...</p>
+        </div>
+
+        <div id="current-weather" class="weather-card">
+        <div class="weather-main">
+            <h2 id="city-name" class="city-name">--</h2>
+            <p id="current-date" class="current-date">--</p>
+            <div class="temp-container">
+            <span id="temperature" class="temperature">--</span>
+            <span id="weather-icon" class="weather-icon"></span>
+            </div>
+            <p id="weather-condition" class="weather-condition">--</p>
+        </div>
+        
+        <div class="weather-details">
+            <div class="detail-item">
+            <i class="fas fa-temperature-low"></i>
+            <span>Feels like: </span>
+            <span id="feels-like">--</span>
+            </div>
+            <div class="detail-item">
+            <i class="fas fa-tint"></i>
+            <span>Humidity: </span>
+            <span id="humidity">--</span>%
+            </div>
+            <div class="detail-item">
+            <i class="fas fa-wind"></i>
+            <span>Wind: </span>
+            <span id="windspeed">--</span>
+            </div>
+            <div class="detail-item">
+            <i class="fas fa-compress-alt"></i>
+            <span>Pressure: </span>
+            <span id="pressure">--</span> hPa
+            </div>
+        </div>
+        </div>
+
+        <div id="forecast-container" class="forecast-container">
+        <h3>5-Day Forecast</h3>
+        <div class="forecast-cards" id="forecast-cards">
+            <!-- Forecast cards will be inserted here by JavaScript -->
+        </div>
+        </div>
+    </section>
+
+    <section class="error-section">
+        <div id="error-message" class="error-message hidden">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p id="error-text"></p>
+        </div>
+    </section>
+    </main>
+
+    <footer class="app-footer">
+    <p>Created by <span class="your-name">Aashish Subedi</span> | Data provided by WeatherApi</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
